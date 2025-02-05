@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="main">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+    <% for(let note of allNotes){ %>
+      <a href="/notes/<%= note._id %>">
+    <div class="col">
+      <div class="card">
+        <div class="image-container">
+          <img src="<%=note.image.url%>" class="card-img-top" alt="note">
+        </div>
+          <div class="card-img-overlay"></div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>
+                  <div>
+                    <p class="subject" style="margin-top: 2.5rem;"><%=note.subject%></p>
+                  </div>
+              </b>
+              <div>
+                <p class="graduation"><%= note.degree %></p>
+              </div>
+              <hr style="margin-top: 2.1rem" color="gray" />
+              <div class="college">
+                <i class="fa-solid fa-building-columns"></i>
+            <span class="note_college"><%= note.college %></span>
+              </div>
+              <div class="year">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span class="year_"><%=note.year%></span> 
+              </div>
+          </p>
+          </div>
+          
+      </div>
+  </div>
+</a>
+  <% } %>
+  </div>
+  </div>
+</div>
+</body>

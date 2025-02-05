@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.container1 {
+  height: 90vh;
+  width: 90vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.leftPart {
+  min-height: 60vh;
+  width: 40%;
+  background-color: #16171c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 3rem;
+  padding: 2rem;
+}
+
+.leftPart .login_header {
+  font-size: 2rem;
+  margin-bottom: 1.3rem;
+  color: wheat;
+}
+
+.leftPart .description {
+  display: flex;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  color: white;
+}
+
+.leftPart .description .fa-check {
+  color: white;
+  margin-right: 1rem;
+}
+
+.leftPart .description p {
+  font-size: 1.1rem;
+}
+
+.rightPart {
+  max-height: 60vh;
+  width: 35%;
+  background-color: #16171c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  padding: 2rem;
+}
+
+.right_header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2.5rem;
+  color: wheat;
+}
+
+.rightPart .right_des {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: -1.5rem;
+  color: white;
+}
+
+.rightPart .LoginwithGoogle {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 6rem;
+  text-decoration: none;
+  border: 1px solid white;
+  opacity: 0.7;
+}
+
+.rightPart .LoginwithGoogle:hover {
+  background-color: #3b3b3d;
+  transition: all ease-in 0.3s;
+}
+
+.rightPart .LoginwithGoogle .Continue_Google {
+  color: white;
+  right: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-right: 4rem;
+  margin-top: 1.2rem;
+}
+
+.rightPart .register_mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1rem;
+}
+
+.rightPart .register_mail .email {
+  font-size: 1rem;
+  opacity: 0.7;
+  padding: 0 1rem;
+  color: white;
+  margin-top: 1.2rem;
+}
+
+.rightPart .Form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6rem;
+  border: 1px solid white;
+  margin-top: -1rem;
+}
+
+.rightPart .Form input {
+  all: unset;
+  color: white;
+}
+
+.rightPart .Form input::placeholder {
+  color: white;
+  opacity: 0.6;
+}
+
+.rightPart .createAccount {
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 1.5rem;
+}
+
+.rightPart .createAccount:hover {
+  text-decoration: underline;
+}
+
+.rightPart .btn {
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  background-color: #6674cc;
+  border-radius: 6rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+}
+
+.rightPart .btn:hover {
+  background-color: blue;
+  transition: all 0.5s ease-in;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1020px) {
+  .leftPart {
+    display: none;
+  }
+
+  .rightPart {
+    width: 35%;
+    min-height: 44vw;
+  }
+}
+
+@media screen and (max-width: 1337px) {
+  html {
+    font-size: 86%;
+  }
+}
+@media screen and (max-width: 905px) {
+  html {
+    font-size: 56%;
+  }
+  .rightPart {
+    width: 70%;
+    min-height: 50vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rightPart {
+    width: 80%;
+    min-height: 60vh;
+  }
+  .rightPart .Form {
+    margin-top: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .rightPart {
+    width: 90%;
+    min-height: 30vh;
+  }
+  .rightPart .LoginwithGoogle {
+    width: 80%;
+  }
+  .rightPart .createAccount {
+    margin-left: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  /* .rightPart .createAccount {
+    margin-left: 2.5rem;
+  } */
+}

@@ -1,0 +1,22 @@
+<nav class="header">
+  <form action="/" method="GET">
+    <a href="/" class="logo">
+      <img src="/image/Screenshot__180_-removebg-preview.png" alt="" />
+    </a>
+  </form>
+  <input type="checkbox" id="check" />
+  <label for="check" class="icons">
+    <i class="bx bx-menu-alt-right" id="menu-icon"></i>
+    <i class="bx bx-x" id="close-icon"></i>
+  </label>
+  <nav class="navbar_">
+    <a href="/notes" style="--i: 0">Notes</a>
+    <a href="/notes/newForm" style="--i: 3">Add Notes</a>
+    <% if(!currUser){ %>
+    <a href="/notes/login" style="--i: 3">Login</a>
+    <a href="/notes/signup" style="--i: 3">Signup</a>
+    <% } %> <% if(currUser) {%>
+    <a href="/notes/logout" style="--i: 3">Logout</a>
+    <% } %>
+  </nav>
+</nav>

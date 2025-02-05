@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify OTP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .verify-container {
+        max-width: 400px;
+        background-color: #181a1b; /* Dark mode */
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+        position: relative;
+        box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.1),
+          -5px -5px 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .verify-container:hover {
+        transform: scale(1.02);
+      }
+
+      .verify-container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .verify-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+      }
+
+      .verify-container input:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px #007bff;
+      }
+
+      .verify-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .verify-container button:hover {
+        background-color: #0056b3;
+      }
+
+      .verify-container a {
+        display: block;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .verify-container a:hover {
+        text-decoration: underline;
+      }
+
+      .error {
+        color: red;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .verify-container {
+          max-width: 90%;
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="verify-container">
+      <h2>Verify OTP</h2>
+      <% if (typeof error !== 'undefined') { %>
+      <div class="error"><%= error %></div>
+      <% } %>
+      <form action="/verify-otp" method="POST">
+        <input type="hidden" name="email" value="<%= email %>" />
+        <input type="number" name="otp" placeholder="Enter OTP" required />
+        <button type="submit">Verify</button>
+      </form>
+      <a href="/forgot-password">Resend OTP</a>
+    </div>
+  </body>
+</html>

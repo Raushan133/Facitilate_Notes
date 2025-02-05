@@ -1,0 +1,62 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="main">
+    <div class="container1">
+      <div class="leftPart">
+        <h1 class="login_header">
+          Access free materials by the world’s best students
+        </h1>
+        <div class="description">
+          <i class="fa-solid fa-check"></i>
+          <p>Free materials by the best students on thousands of subjects</p>
+        </div>
+        <div class="description">
+          <i class="fa-solid fa-check"></i>
+          <p>No wasting time on low-quality materials</p>
+        </div>
+        <div class="description">
+          <i class="fa-solid fa-check"></i>
+          <p>Make money from your existing materials</p>
+        </div>
+      </div>
+      <div class="rightPart">
+        <p class="right_header">Secure Access Made Simple</p>
+        <p class="right_des">
+          Accessing your account is a Facitilate. Pick your preferred login
+          method.
+        </p>
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+          <div class="Form">
+            <input
+              type="text"
+              name="username"
+              placeholder="Enter Username"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Please Enter username</div>
+          </div>
+          <div class="Form">
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Please Enter Valid Password</div>
+          </div>
+          <div class="link">
+            <a href="/forgot-password" class="createAccount">Forgot-password</a>
+            <a href="/notes/signup" class="createAccount"
+              >Don't have a account?</a
+            >
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

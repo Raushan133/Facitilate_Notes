@@ -1,0 +1,87 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+  <div class="main">
+    <div class="row mt-5">
+      <div class="style_ col-md-6">
+        <h2 style="text-align: center; color: white">New Notes</h2>
+        <form
+          method="POST"
+          action="/notes"
+          style="color: white"
+          novalidate
+          class="form_style needs-validation d-flex flex-column"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="subject" class="form-level">Subject</label>
+            <input
+              type="text"
+              name="note[subject]"
+              placeholder="Enter Subject Name"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Enter Subject</div>
+          </div>
+          <div class="mb-3">
+            <label for="degree" class="form-level">Degree</label>
+            <input
+              type="text"
+              name="note[degree]"
+              placeholder="Enter Degree Name"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Enter Degree</div>
+          </div>
+          <div class="mb-3">
+            <label for="file" class="form-level">Image of First Page</label>
+            <input
+              type="file"
+              name="note[image]"
+              class="form-control"
+              accept=".jpg"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="file" class="form-level">file</label>
+            <input
+              type="file"
+              name="note[file]"
+              class="form-control"
+              accept=".pdf"
+              required
+            />
+          </div>
+          <div class="row">
+            <div class="mb-3 col-md-5">
+              <label for="college" class="form-level">College Name</label>
+              <input
+                name="note[college]"
+                placeholder="Enter College"
+                class="form-control"
+                required
+              />
+              <div class="invalid-feedback">Enter College Name</div>
+            </div>
+            <div class="mb-3 col-md-7">
+              <label for="year" class="form-level">Year</label>
+              <input
+                type="text"
+                name="note[year]"
+                placeholder="Enter Year"
+                class="form-control"
+                required
+              />
+              <div class="invalid-feedback">Enter Year</div>
+            </div>
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary mb-3 mt-2">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
