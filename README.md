@@ -4,11 +4,17 @@ Facilitate is a full-stack web application designed to help college students acc
 
 🚀 Features
 📜 Core Functionality
+
 ✅ CRUD Operations – Users can Create, Read, Update, and Delete their notes.
+
 ✅ Authentication & Authorization – Secure login/logout system using sessions and JWT.
+
 ✅ Email Verification – Prevents fake registrations by sending verification emails before signup.
+
 ✅ Password Reset with OTP – Allows users to reset passwords securely using OTP-based email verification.
+
 ✅ Search & Filtering – Implements an efficient searching algorithm for quick access to notes.
+
 ✅ User-Friendly UI – Uses EJS & EJS-mate for smooth, responsive page rendering.
 
 🔒 Security & Authentication
