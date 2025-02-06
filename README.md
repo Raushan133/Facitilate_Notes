@@ -18,21 +18,25 @@ Facilitate is a full-stack web application designed to help college students acc
 ✅ User-Friendly UI – Uses EJS & EJS-mate for smooth, responsive page rendering.
 
 🔒 Security & Authentication
+
 🔐 Secure User Authentication – Uses JWT & Sessions for login.
 ✉ Nodemailer Integration – Sends account verification and password reset emails.
 🛡 Password Encryption – Uses Crypto for hashing sensitive data.
 📁 Cookie Management – Securely handles session cookies using cookie-parser.
 
 📂 File Uploads & Storage
+
 📤 Upload & Store Notes – Users can upload PDFs, images, and handwritten notes.
 ☁ Cloudinary Integration – Ensures reliable cloud storage and retrieval of uploaded files.
 
 🛠 Error Handling & Optimization
+
 ⚡ Robust Error Handling – Ensures smooth execution with structured error messages.
 🚀 Optimized Performance – Implements MongoDB indexing & query optimization.
 📝 Scalable Architecture – Built with a modular and scalable approach.
 
 🛠 Tech Stack & NPM Packages Used
+
 🌐 Backend (Node.js & Express.js)
 🏗 Express – Handles routing and backend logic.
 🗃 MongoDB – NoSQL database for user and note storage.
