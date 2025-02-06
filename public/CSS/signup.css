@@ -1,26 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
-  outline: none;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  color: white;
-}
-
 .container1 {
   height: 90vh;
   width: 90vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden; /* Prevents overflow */
 }
 
 .leftPart {
@@ -36,30 +22,31 @@ body {
 }
 
 .leftPart .login_header {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1.3rem;
   color: wheat;
 }
 
 .leftPart .description {
   display: flex;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
   align-items: center;
+  justify-content: center;
   color: white;
 }
 
 .leftPart .description .fa-check {
   color: white;
   margin-right: 1rem;
+  font-size: 1.7rem;
 }
 
 .leftPart .description p {
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 
 .rightPart {
-  max-height: 60vh;
+  min-height: 60vh;
   width: 35%;
   background-color: #16171c;
   display: flex;
@@ -68,61 +55,23 @@ body {
   align-items: center;
   border-radius: 3rem;
   padding: 2rem;
+  position: relative;
+  overflow: hidden; /* Prevents input field overflow */
+  text-align: center; /* Ensures text elements inside are centered */
 }
 
 .right_header {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   color: wheat;
 }
 
 .rightPart .right_des {
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-align: center;
-  margin-top: -1.5rem;
   color: white;
-}
-
-.rightPart .LoginwithGoogle {
-  width: 60%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 6rem;
-  text-decoration: none;
-  border: 1px solid white;
-  opacity: 0.7;
-}
-
-.rightPart .LoginwithGoogle:hover {
-  background-color: #3b3b3d;
-  transition: all ease-in 0.3s;
-}
-
-.rightPart .LoginwithGoogle .Continue_Google {
-  color: white;
-  right: 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  padding-right: 4rem;
-  margin-top: 1.2rem;
-}
-
-.rightPart .register_mail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -1rem;
-}
-
-.rightPart .register_mail .email {
-  font-size: 1rem;
-  opacity: 0.7;
-  padding: 0 1rem;
-  color: white;
-  margin-top: 1.2rem;
 }
 
 .rightPart .Form {
@@ -132,12 +81,16 @@ body {
   justify-content: center;
   border-radius: 6rem;
   border: 1px solid white;
-  margin-top: -1rem;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .rightPart .Form input {
   all: unset;
   color: white;
+  width: 100%;
 }
 
 .rightPart .Form input::placeholder {
@@ -145,13 +98,19 @@ body {
   opacity: 0.6;
 }
 
+/* Fix: Centering the "Create Account" link properly */
+.rightPart .createAccountWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
 .rightPart .createAccount {
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-decoration: none;
   color: white;
   cursor: pointer;
-  text-align: center;
-  margin-left: 1.5rem;
 }
 
 .rightPart .createAccount:hover {
@@ -174,41 +133,49 @@ body {
   transition: all 0.5s ease-in;
   color: white;
 }
-
 /* Responsive Adjustments */
+@media screen and (max-width: 1337px) {
+  html {
+    font-size: 86%;
+  }
+  .rightPart {
+    width: 80%;
+    min-height: 50vw;
+  }
+}
+
 @media screen and (max-width: 1020px) {
   .leftPart {
     display: none;
   }
 
   .rightPart {
-    width: 35%;
+    margin-left: 2.2rem;
+    width: 80%;
     min-height: 44vw;
   }
 }
 
-@media screen and (max-width: 1337px) {
+@media screen and (max-width: 905px) {
   html {
     font-size: 86%;
   }
-}
-@media screen and (max-width: 905px) {
-  html {
-    font-size: 56%;
-  }
   .rightPart {
-    width: 70%;
-    min-height: 50vw;
+    width: 80%;
+    min-height: 40vw;
   }
 }
 
 @media screen and (max-width: 500px) {
   .rightPart {
-    width: 80%;
-    min-height: 60vh;
+    width: 90%;
+    min-height: auto;
   }
   .rightPart .Form {
     margin-top: 0.2rem;
+  }
+  .rightPart .createAccountWrapper {
+    justify-content: center; /* Ensures centering on small screens */
   }
 }
 
@@ -220,13 +187,4 @@ body {
   .rightPart .LoginwithGoogle {
     width: 80%;
   }
-  .rightPart .createAccount {
-    margin-left: 4.5rem;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  /* .rightPart .createAccount {
-    margin-left: 2.5rem;
-  } */
 }

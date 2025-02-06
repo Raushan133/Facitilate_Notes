@@ -1,0 +1,160 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 8rem;
+  padding: 1.3rem 10%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  align-items: center;
+  background-color: #606f76;
+}
+
+.header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.logo {
+  font-size: 1.15rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 20%;
+}
+
+.navbar_ a {
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 2.5rem;
+}
+
+#check {
+  display: none;
+}
+.icons {
+  font-size: 2.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .icons {
+    display: inline-flex;
+    font-size: 4.5rem;
+  }
+
+  .logo img {
+    width: 35%;
+  }
+
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbar_ {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    transition: 0.1s ease;
+  }
+
+  .navbar_ .btn .btn_ {
+    height: 2.4rem;
+    padding: 0 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    background-color: white;
+    border-radius: 2rem;
+    margin-left: 38%;
+  }
+
+  #check:checked ~ .navbar_ {
+    height: 18.7rem;
+  }
+
+  .navbar_ a {
+    display: block;
+    font-size: 1.7rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50deg);
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+
+  #check:checked ~ .navbar_ a {
+    transform: translateY(0);
+    transition-delay: calc(0.15s * var(--i));
+    opacity: 1;
+  }
+
+  .navbar_ .btn .btn_ {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    margin-left: 42%;
+    transform: translateY(-50deg);
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+
+  #check:checked ~ .navbar_ .btn .btn_ {
+    transform: translateY(0);
+    transition-delay: calc(0.15s * var(--i));
+    opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    height: 4.3rem;
+  }
+
+  .icons {
+    display: inline-flex;
+    font-size: 2.5rem;
+  }
+
+  .logo img {
+    width: 20%;
+  }
+  .navbar_ a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo img {
+    width: 25%;
+  }
+}

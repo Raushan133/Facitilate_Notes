@@ -1,89 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
-  outline: none;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  color: white;
-}
-
-.container1 {
-  height: 90vh;
-  width: 90vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.leftPart {
-  min-height: 60vh;
-  width: 40%;
-  background-color: #16171c;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 3rem;
-  padding: 2rem;
-}
-
-.leftPart .login_header {
-  font-size: 2rem;
-  margin-bottom: 1.3rem;
-  color: wheat;
-}
-
-.leftPart .description {
-  display: flex;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  align-items: center;
-  color: white;
-}
-
-.leftPart .description .fa-check {
-  color: white;
-  margin-right: 1rem;
-}
-
-.leftPart .description p {
-  font-size: 1.1rem;
-}
-
-.rightPart {
-  min-height: 65vh;
-  width: 35%;
-  background-color: #16171c;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3rem;
-  padding: 2rem;
-}
-
-.right_header {
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: wheat;
-}
-
-.rightPart .right_des {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: white;
-}
 
 .rightPart .Form {
   width: 60%;
@@ -152,7 +68,6 @@ body {
   }
 
   .rightPart {
-    width: 60%;
     min-height: 50vw;
   }
 }

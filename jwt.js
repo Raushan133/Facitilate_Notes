@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
-const {Token} = require("./models/user.js");
+const { Token } = require("./models/user.js");
 
 const secret = "Hello, I am a full stack developer";
 
@@ -16,14 +16,13 @@ const generateAccessToken = async (payload) => {
   }
 
   // Generate JWT token (valid for 30 minutes)
-  let token = jwt.sign(payload, secret, { expiresIn: "30m" });
+  let token = jwt.sign(payload, secret, { expiresIn: "60m" });
 
   // Generate a unique short ID
   const shortId = generateShortId();
   console.log(token);
   console.log(shortId);
-  
-  
+
   // Store in MongoDB
   await Token.create({ shortId, token });
 
@@ -43,7 +42,11 @@ const verifyToken = async (id) => {
     // ✅ Delete token after successful verification (prevent reuse)
     await Token.deleteOne({ shortId: id });
 
-    return { status: true, payload: decoded, message: "Email verified successfully" };
+    return {
+      status: true,
+      payload: decoded,
+      message: "Email verified successfully",
+    };
   } catch (error) {
     return { status: false, message: error.message };
   }

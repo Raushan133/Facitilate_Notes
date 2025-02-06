@@ -34,6 +34,8 @@ const generateOTP = () => {
 
 // Render Email Template
 const render_Email_Template = async (data) => {
+  console.log(data);
+
   try {
     const templatePath = path.join(__dirname, "../views/User/test.ejs");
     const template = fs.readFileSync(templatePath, "utf-8");
@@ -166,8 +168,8 @@ Route.post("/forgot-password", async (req, res) => {
     let { email } = req.body;
     console.log(email);
 
-    // Use await instead of a callback
-    let user = await User.findOne({ email });
+    // Find user by email and get both email & username
+    let user = await User.findOne({ email }, "email username");
 
     if (!user) {
       return res.status(400).send("Invalid email");
@@ -175,11 +177,15 @@ Route.post("/forgot-password", async (req, res) => {
 
     let otp = generateOTP();
     otpgenerator.set(email, otp);
-    req.session.email = email;
+
+    // Store both email and username in the session
+    req.session.email = user.email;
+    req.session.username = user.username;
     req.session.otp = otp;
 
     res.redirect("/renderEmailTemplate");
   } catch (error) {
+    console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -187,8 +193,8 @@ Route.post("/forgot-password", async (req, res) => {
 // 🚀 GET: Render OTP Email
 Route.get("/renderEmailTemplate", async (req, res) => {
   try {
-    let { email, otp } = req.session;
-    const htmlContent = await render_Email_Template({ email, otp });
+    let { email, otp, username } = req.session;
+    const htmlContent = await render_Email_Template({ email, otp, username });
 
     const mail = new Mail();
     mail.setTo(email);
@@ -197,7 +203,7 @@ Route.get("/renderEmailTemplate", async (req, res) => {
 
     await mail.send();
 
-    res.render("./User/verify-otp", { email: email });
+    res.render("./User/verify-otp", { email: email, username: username });
   } catch (error) {
     res.status(500).send("Internal Server Error");
   }

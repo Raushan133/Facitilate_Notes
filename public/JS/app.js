@@ -16,7 +16,6 @@ var main = document.querySelector(".main");
 document.addEventListener("DOMContentLoaded", function () {
   love.style.transform = "translate(-50%,-50%) scale(0)";
   love.style.opacity = 0.8;
-  // love.style.filter = "blur(0.2px)";
 
   setTimeout(function () {
     love.style.transform = "translate(-50%,-50%) scale(8)";
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.onload = function () {
   const slider = document.querySelector("#SearchNotes");
   let scrollPosition = 0;
-  const stepSize = 319;
+  const stepSize = 333.5;
   const pauseTime = 2000;
   let intervalId = null;
 
