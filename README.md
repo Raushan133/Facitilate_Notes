@@ -22,8 +22,8 @@ Facilitate is a full-stack web application designed to help college students acc
 --> 🔐 Secure User Authentication – Uses JWT & Sessions for login.
 
 -->✉ Nodemailer Integration – Sends account verification and password reset emails.
-🛡 Password Encryption – Uses Crypto for hashing sensitive data.
-📁 Cookie Management – Securely handles session cookies using cookie-parser.
+-->🛡 Password Encryption – Uses Crypto for hashing sensitive data.
+-->📁 Cookie Management – Securely handles session cookies using cookie-parser.
 
 📂 File Uploads & Storage
 
